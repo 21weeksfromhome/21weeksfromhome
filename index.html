@@ -78,6 +78,11 @@
       margin: 12px 0;
       box-shadow: 0 3px 15px rgba(0,0,0,0.04);
       cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .week:active {
+      transform: scale(0.99);
     }
 
     .week-number {
@@ -126,6 +131,7 @@
     .week-page-header {
       text-align: center;
       margin-bottom: 28px;
+      padding-top: 10px;
     }
 
     .week-page-header .small {
@@ -140,7 +146,8 @@
       font-family: Georgia, serif;
       font-size: 32px;
       font-weight: normal;
-      margin: 0 0 8px;
+      line-height: 1.2;
+      margin: 0 0 10px;
     }
 
     .week-date {
@@ -156,21 +163,24 @@
       box-shadow: 0 5px 25px rgba(0,0,0,0.06);
     }
 
-    .letter {
+    .letter,
+    .mission-card {
       background: white;
       border-radius: 22px;
       padding: 26px 24px;
       box-shadow: 0 5px 25px rgba(0,0,0,0.05);
     }
 
-    .letter p {
+    .letter p,
+    .mission-card p {
       font-family: Georgia, serif;
       font-size: 17px;
       line-height: 1.75;
       margin: 0 0 20px;
     }
 
-    .letter p:last-child {
+    .letter p:last-child,
+    .mission-card p:last-child {
       margin-bottom: 0;
     }
 
@@ -179,6 +189,49 @@
       font-size: 20px !important;
       line-height: 1.5 !important;
       margin: 28px 0 !important;
+    }
+
+    .mission-icon {
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 18px;
+    }
+
+    .mission-main {
+      background: #f7f3ed;
+      border-radius: 18px;
+      padding: 22px 20px;
+      margin: 25px 0;
+      text-align: center;
+    }
+
+    .mission-main p {
+      font-size: 19px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .send-button {
+      display: block;
+      width: 100%;
+      margin-top: 28px;
+      border: none;
+      border-radius: 16px;
+      background: #2f302d;
+      color: white;
+      padding: 16px 18px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .tiny-note {
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      margin-top: 12px;
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -237,14 +290,11 @@
 
 
     <div class="footer">
-
       Ein kleines Stück Zuhause,<br>
       egal wo du gerade bist. 🤍
-
     </div>
 
   </div>
-
 
 
   <!-- WOCHE 1 -->
@@ -253,7 +303,6 @@
     <div class="back-button" onclick="showHome()">
       ← Zurück zu den 21 Wochen
     </div>
-
 
     <div class="week-page-header">
 
@@ -448,28 +497,133 @@
 
   </div>
 
+
+  <!-- WOCHE 2 -->
+  <div id="week2Page" class="week-page">
+
+    <div class="back-button" onclick="showHome()">
+      ← Zurück zu den 21 Wochen
+    </div>
+
+    <div class="week-page-header">
+
+      <div class="small">
+        Woche 02
+      </div>
+
+      <h2>
+        📸 Let me see what you see.
+      </h2>
+
+      <div class="week-date">
+        7. September 2026
+      </div>
+
+    </div>
+
+
+    <div class="mission-card">
+
+      <div class="mission-icon">
+        📷
+      </div>
+
+      <p>
+        Eine Woche bist du jetzt schon unterwegs. 🥹
+      </p>
+
+      <p>
+        Und weil ich gerade natürlich nicht neben dir stehen
+        und alles mit eigenen Augen sehen kann, habe ich diese Woche
+        eine kleine Aufgabe für dich:
+      </p>
+
+
+      <div class="mission-main">
+
+        <p>
+          <strong>
+            Mach irgendwann diese Woche ein Foto von einem Moment,
+            bei dem du dir denkst:
+            <br><br>
+            „Das würde ich Rahel jetzt gerne zeigen.“
+          </strong>
+        </p>
+
+      </div>
+
+
+      <p>
+        Es muss nichts Spektakuläres sein.
+      </p>
+
+      <p>
+        Keine Sehenswürdigkeit.<br>
+        Kein perfektes Ferienfoto.<br>
+        Kein Bild, das du posten würdest.
+      </p>
+
+      <p>
+        Vielleicht ist es etwas Schönes.
+        Vielleicht etwas Lustiges.
+        Vielleicht etwas komplett Banales.
+      </p>
+
+      <p>
+        Einfach ein Moment, bei dem du kurz an mich denkst.
+      </p>
+
+      <p class="highlight">
+        <strong>
+          Und dann schick ihn mir. 🤍
+        </strong>
+      </p>
+
+      <p>
+        Ich möchte für einen kleinen Moment sehen,
+        was du gerade siehst.
+      </p>
+
+
+      <a
+        class="send-button"
+        href="https://wa.me/?text=Ich%20habe%20meinen%20Woche-2-Moment%20für%20dich%20📸🤍"
+      >
+        📸 Foto an Rahel schicken
+      </a>
+
+      <div class="tiny-note">
+        WhatsApp öffnet sich – dann einfach Rahel auswählen
+        und dein Foto dazuschicken. 🤍
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
 
 <script>
 
   /*
-    TESTMODUS:
-    Wir tun momentan so, als wäre der 31.08. bereits erreicht.
-    Dadurch kannst DU Woche 1 jetzt testen.
+    TESTMODUS
 
-    Bevor Laura den QR-Code bekommt,
-    stellen wir das wieder auf die echte Datumsprüfung um.
+    Momentan sind Woche 1 + Woche 2 freigeschaltet,
+    damit du alles testen kannst.
+
+    Bevor Laura die Website bekommt,
+    entfernen wir den Testmodus und stellen
+    auf die echten Daten um.
   */
 
-  const startDate =
-    new Date("2026-08-23T00:00:00");
+  const TEST_WEEK = 2;
 
 
   const weeks = [
 
     "And so the adventure begins.",
-    "Eine kleine Aufgabe",
+    "Let me see what you see.",
     "Ein Lied für dich",
     "Eine Erinnerung",
     "Ein gemeinsamer Moment",
@@ -495,7 +649,15 @@
 
   function getCurrentWeek() {
 
-    const today = new Date();
+    if (TEST_WEEK !== null) {
+      return TEST_WEEK;
+    }
+
+    const startDate =
+      new Date("2026-08-31T00:00:00");
+
+    const today =
+      new Date();
 
     const difference =
       today.getTime() - startDate.getTime();
@@ -506,11 +668,9 @@
         (1000 * 60 * 60 * 24)
       );
 
-
     if (days < 0) {
       return 0;
     }
-
 
     return Math.min(
       Math.floor(days / 7) + 1,
@@ -537,10 +697,8 @@
       const isUnlocked =
         weekNumber <= currentWeek;
 
-
       const div =
         document.createElement("div");
-
 
       div.className =
         "week " +
@@ -564,12 +722,15 @@
       `;
 
 
-      if (
-        weekNumber === 1 &&
-        isUnlocked
-      ) {
+      if (isUnlocked) {
 
-        div.onclick = showWeek1;
+        if (weekNumber === 1) {
+          div.onclick = () => showWeek("week1Page");
+        }
+
+        if (weekNumber === 2) {
+          div.onclick = () => showWeek("week2Page");
+        }
 
       }
 
@@ -581,14 +742,20 @@
   }
 
 
-  function showWeek1() {
+  function showWeek(pageId) {
 
     document
       .getElementById("homePage")
       .style.display = "none";
 
     document
-      .getElementById("week1Page")
+      .querySelectorAll(".week-page")
+      .forEach(page => {
+        page.style.display = "none";
+      });
+
+    document
+      .getElementById(pageId)
       .style.display = "block";
 
     window.scrollTo(0, 0);
@@ -599,8 +766,10 @@
   function showHome() {
 
     document
-      .getElementById("week1Page")
-      .style.display = "none";
+      .querySelectorAll(".week-page")
+      .forEach(page => {
+        page.style.display = "none";
+      });
 
     document
       .getElementById("homePage")
