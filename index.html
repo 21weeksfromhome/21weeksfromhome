@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>21 Weeks From Home 🤍</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -49,19 +46,24 @@
       margin: 0;
     }
 
-    .intro {
+    .intro,
+    .content-card {
       background: white;
-      border-radius: 20px;
-      padding: 25px;
-      margin-bottom: 35px;
+      border-radius: 22px;
+      padding: 26px 24px;
       box-shadow: 0 5px 25px rgba(0,0,0,0.05);
     }
 
-    .intro p {
+    .intro {
+      margin-bottom: 35px;
+    }
+
+    .intro p,
+    .content-card p {
       font-family: Georgia, serif;
       font-size: 17px;
-      line-height: 1.7;
-      margin: 0;
+      line-height: 1.75;
+      margin: 0 0 20px;
     }
 
     .section-title {
@@ -78,11 +80,6 @@
       margin: 12px 0;
       box-shadow: 0 3px 15px rgba(0,0,0,0.04);
       cursor: pointer;
-      transition: transform 0.15s ease;
-    }
-
-    .week:active {
-      transform: scale(0.99);
     }
 
     .week-number {
@@ -163,20 +160,6 @@
       box-shadow: 0 5px 25px rgba(0,0,0,0.06);
     }
 
-    .content-card {
-      background: white;
-      border-radius: 22px;
-      padding: 26px 24px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
-    }
-
-    .content-card p {
-      font-family: Georgia, serif;
-      font-size: 17px;
-      line-height: 1.75;
-      margin: 0 0 20px;
-    }
-
     .highlight {
       text-align: center;
       font-size: 20px !important;
@@ -216,7 +199,7 @@
       font-size: 16px;
       text-align: center;
       text-decoration: none;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      cursor: pointer;
     }
 
     audio {
@@ -231,6 +214,65 @@
       display: block;
       background: #000;
     }
+
+    /* QUIZ */
+    .quiz-question {
+      margin: 30px 0;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #eee9e2;
+    }
+
+    .quiz-question:last-of-type {
+      border-bottom: none;
+    }
+
+    .quiz-question h3 {
+      font-family: Georgia, serif;
+      font-size: 19px;
+      font-weight: normal;
+      line-height: 1.5;
+      margin: 0 0 16px;
+    }
+
+    .answer {
+      display: block;
+      width: 100%;
+      padding: 14px 16px;
+      margin: 9px 0;
+      border-radius: 14px;
+      border: 1px solid #ddd8d0;
+      background: #faf8f4;
+      color: #2f302d;
+      text-align: left;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .answer.selected {
+      background: #2f302d;
+      color: white;
+      border-color: #2f302d;
+    }
+
+    .quiz-result {
+      display: none;
+      background: #f7f3ed;
+      border-radius: 18px;
+      padding: 24px 20px;
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .quiz-result h3 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: normal;
+      margin: 0 0 12px;
+    }
+
+    .quiz-result p {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 
@@ -238,7 +280,6 @@
 
 <div class="container">
 
-  <!-- STARTSEITE -->
   <div id="homePage">
 
     <section class="hero">
@@ -264,7 +305,6 @@
     </section>
 
     <h2 class="section-title">Deine 21 Wochen</h2>
-
     <div id="weeks"></div>
 
     <div class="footer">
@@ -277,7 +317,6 @@
 
   <!-- WOCHE 1 -->
   <div id="week1Page" class="week-page">
-
     <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
 
     <div class="week-page-header">
@@ -289,7 +328,6 @@
     <img src="IMG_3808.jpeg" alt="Laura und Rahel" class="week-photo">
 
     <div class="content-card">
-
       <p><strong>Meine Bella 🤍</strong></p>
 
       <p>
@@ -396,7 +434,6 @@
       </p>
 
       <p>Was jeweils kommt, verrate ich dir nicht.</p>
-
       <p>Nur eines: <strong>Schau nächsten Montag wieder vorbei. 🤍</strong></p>
 
       <p>Jetzt aber Handy weg.</p>
@@ -415,14 +452,12 @@
           Ein kleines Stück Zuhause reist ab jetzt immer mit dir. 🤍
         </strong>
       </p>
-
     </div>
   </div>
 
 
   <!-- WOCHE 2 -->
   <div id="week2Page" class="week-page">
-
     <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
 
     <div class="week-page-header">
@@ -432,7 +467,6 @@
     </div>
 
     <div class="content-card">
-
       <div class="icon">📷</div>
 
       <p>Eine Woche bist du jetzt schon unterwegs. 🥹</p>
@@ -444,17 +478,13 @@
       </p>
 
       <div class="special-box">
-        <p>
-          <strong>
-            Mach irgendwann diese Woche ein Foto von einem Moment,
-            bei dem du dir denkst:
-            <br><br>
-            „Das würde ich Rahel jetzt gerne zeigen.“
-          </strong>
-        </p>
+        <p><strong>
+          Mach irgendwann diese Woche ein Foto von einem Moment,
+          bei dem du dir denkst:
+          <br><br>
+          „Das würde ich Rahel jetzt gerne zeigen.“
+        </strong></p>
       </div>
-
-      <p>Es muss nichts Spektakuläres sein.</p>
 
       <p>
         Keine Sehenswürdigkeit.<br>
@@ -472,22 +502,16 @@
 
       <p class="highlight"><strong>Und dann schick ihn mir. 🤍</strong></p>
 
-      <p>Ich möchte für einen kleinen Moment sehen, was du gerade siehst.</p>
-
-      <a
-        class="action-button"
-        href="https://wa.me/?text=Ich%20habe%20meinen%20Woche-2-Moment%20für%20dich%20📸🤍"
-      >
+      <a class="action-button"
+         href="https://wa.me/?text=Ich%20habe%20meinen%20Woche-2-Moment%20für%20dich%20📸🤍">
         📸 Foto an Rahel schicken
       </a>
-
     </div>
   </div>
 
 
   <!-- WOCHE 3 -->
   <div id="week3Page" class="week-page">
-
     <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
 
     <div class="week-page-header">
@@ -497,11 +521,9 @@
     </div>
 
     <div class="content-card">
-
       <div class="icon">🎧</div>
 
       <p>Es gibt Lieder, die einfach sofort eine Person im Kopf auslösen.</p>
-
       <p>Und bei diesem hier bist das ganz klar du.</p>
 
       <p>
@@ -524,26 +546,8 @@
 
       <p class="highlight"><strong>Mit dir ist es immer schön.</strong></p>
 
-      <p>
-        Berlin war dafür irgendwie das perfekte Beispiel.
-        Der ganze Trip war einfach so toll mit dir –
-        und dieses Lied ist für mich seitdem untrennbar damit verbunden.
-      </p>
-
-      <p>
-        Und natürlich erinnert es mich auch an all die Partyzeiten mit dir.
-        An gemeinsam lachen, tanzen, Spass haben und einfach das Leben
-        ein bisschen zu laut geniessen. 😂🤍
-      </p>
-
       <div class="special-box">
-        <p>
-          <strong>
-            Also ist deine Aufgabe diese Woche ganz einfach:
-            <br><br>
-            Hör dir L’amour toujours einmal ganz bewusst an.
-          </strong>
-        </p>
+        <p><strong>Hör dir L’amour toujours einmal ganz bewusst an.</strong></p>
       </div>
 
       <p>
@@ -554,24 +558,17 @@
 
       <p>Und denk für ein paar Minuten an unsere Telefonkabine in Berlin.</p>
 
-      <p>Ich werde wahrscheinlich gerade irgendwo in der Schweiz dasselbe tun. 🤍</p>
-
-      <a
-        class="action-button"
-        href="https://open.spotify.com/search/L%27amour%20toujours"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a class="action-button"
+         href="https://open.spotify.com/search/L%27amour%20toujours"
+         target="_blank">
         🎵 L’amour toujours anhören
       </a>
-
     </div>
   </div>
 
 
   <!-- WOCHE 4 -->
   <div id="week4Page" class="week-page">
-
     <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
 
     <div class="week-page-header">
@@ -580,10 +577,9 @@
       <div class="week-date">21. September 2026</div>
     </div>
 
-    <img src="IMG_8341.jpeg" alt="Barcelona mit Laura" class="week-photo">
+    <img src="IMG_8341.jpeg" class="week-photo">
 
     <div class="content-card">
-
       <p>Bella, schau uns an. 😂🤍</p>
 
       <p><strong>17 Jahre alt. Barcelona. Unsere ersten richtigen Ferien alleine.</strong></p>
@@ -593,25 +589,14 @@
         gerade schon wahnsinnig erwachsen zu sein. 😂
       </p>
 
-      <p>Und was hatten wir bitte für eine geile Zeit.</p>
-
       <p>
         Wir haben gefeiert, gebadet, uns Sachen angeschaut, gegessen,
         gelacht und einfach Barcelona zusammen unsicher gemacht.
       </p>
 
-      <p>
-        Wenn ich dieses Foto sehe, muss ich sofort daran denken,
-        wie besonders dieser Trip eigentlich war.
-        Unsere ersten richtigen Ferien alleine – und eine von so vielen
-        Erinnerungen mit dir, bei denen ich heute noch denke:
-      </p>
-
       <p class="highlight">
         <strong>Was hatten wir bitte für eine schöne Zeit zusammen. 🥹🤍</strong>
       </p>
-
-      <p>Und irgendwie finde ich dieses Foto gerade jetzt noch ein bisschen spezieller.</p>
 
       <p>
         Weil ich uns da mit 17 sehe, irgendwo in Barcelona,
@@ -623,55 +608,24 @@
         auf der anderen Seite der Welt unterwegs bist. 🥹🌏
       </p>
 
-      <p>Schon verrückt, wie viel seit diesem Foto passiert ist.</p>
-
       <p>
         Wie viele Reisen.<br>
         Wie viele Partys.<br>
         Wie viele Aperols.<br>
-        Wie viele Lachanfälle.<br>
-        Wie viele komplett belanglose Momente, die mit dir trotzdem besonders wurden.
+        Wie viele Lachanfälle.
       </p>
-
-      <p>Und genau das liebe ich so an unserer Freundschaft:</p>
 
       <p class="highlight">
         <strong>Es ist eigentlich völlig egal, wo wir sind oder was wir machen.</strong>
       </p>
 
-      <p>
-        Ob Barcelona, Berlin, irgendeine Party,
-        ein Aperol irgendwo oder einfach nur wir zwei
-        bei irgendeinem komplett normalen Abend.
-      </p>
-
       <p><strong>Mit dir ist es immer toll.</strong></p>
-
-      <p>
-        Und ich hoffe sehr, dass wir mit 40, 60 oder 80
-        irgendwann unsere alten Fotos anschauen und uns immer noch
-        über die zwei jungen Schnaufer auf diesem Bild kaputtlachen. 😂🤍
-      </p>
-
-      <p>Bis dahin sammeln wir einfach weiter.</p>
-
-      <p>
-        Du gerade dort drüben.<br>
-        Ich hier.
-      </p>
-
-      <p>
-        Und ganz viele neue gemeinsame Abenteuer,
-        sobald du wieder zuhause bist. 🤍
-      </p>
-
     </div>
   </div>
 
 
   <!-- WOCHE 5 -->
   <div id="week5Page" class="week-page">
-
     <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
 
     <div class="week-page-header">
@@ -681,73 +635,45 @@
     </div>
 
     <div class="content-card">
-
       <div class="icon">🍹</div>
 
       <p>Bella, diese Woche machen wir etwas zusammen.</p>
 
-      <p>
-        Nicht ganz am gleichen Ort.<br>
-        Nicht ganz zur gleichen Zeit.<br>
-        Aber trotzdem irgendwie zusammen.
-      </p>
-
       <div class="special-box">
-        <p>
-          <strong>
-            Hol dir irgendwann diese Woche ein Getränk,
-            auf das du gerade richtig Lust hast.
-          </strong>
-        </p>
+        <p><strong>
+          Hol dir irgendwann diese Woche ein Getränk,
+          auf das du gerade richtig Lust hast.
+        </strong></p>
       </div>
 
       <p>
-        Aperol wäre natürlich sehr passend. 😂
-        Aber Kaffee, Cocktail, Saft, Kokosnuss
-        oder irgendetwas anderes zählt genauso.
+        Such dir einen schönen Ort.
+        Setz dich hin.
+        Schau dich kurz um.
       </p>
 
-      <p>Such dir einen schönen Ort.</p>
-      <p>Setz dich hin.</p>
-      <p>Schau dich kurz um.</p>
-
       <p>
-        Und dann mach ein Foto von deinem Getränk
-        und deiner Aussicht.
+        Und dann mach ein Foto von deinem Getränk und deiner Aussicht.
       </p>
 
       <p class="highlight"><strong>Schick es mir. 🤍</strong></p>
 
       <p>Ich mache diese Woche dasselbe zuhause.</p>
 
-      <p>
-        Und dann tun wir einfach für einen kleinen Moment so,
-        als würden wir zusammen irgendwo sitzen, trinken und quatschen.
-      </p>
-
-      <p>Ein kleiner Aperol-Moment auf Distanz. 🍹</p>
-
       <p class="highlight">
-        <strong>
-          Auf uns, Bella.<br><br>
-          Egal wie viele Kilometer gerade zwischen uns liegen. 🤍
-        </strong>
+        <strong>Auf uns, Bella. Egal wie viele Kilometer gerade zwischen uns liegen. 🤍</strong>
       </p>
 
-      <a
-        class="action-button"
-        href="https://wa.me/?text=Cheers%20Bella%20🍹🤍%20Hier%20kommt%20mein%20Woche-5-Moment."
-      >
+      <a class="action-button"
+         href="https://wa.me/?text=Cheers%20Bella%20🍹🤍">
         🍹 Cheers an Rahel schicken
       </a>
-
     </div>
   </div>
 
 
   <!-- WOCHE 6 -->
   <div id="week6Page" class="week-page">
-
     <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
 
     <div class="week-page-header">
@@ -757,38 +683,28 @@
     </div>
 
     <div class="content-card">
-
       <div class="icon">🎙️</div>
 
       <p>Bella, diese Woche gibt’s keinen langen Text.</p>
-
       <p>Ich wollte einfach, dass du kurz meine Stimme hörst.</p>
 
       <div class="special-box">
-        <p>
-          <strong>
-            Kopfhörer rein, kurz hinsetzen
-            und Play drücken. 🤍
-          </strong>
-        </p>
+        <p><strong>Kopfhörer rein, kurz hinsetzen und Play drücken. 🤍</strong></p>
       </div>
 
-      <audio controls preload="metadata">
+      <audio controls>
         <source src="woche6.m4a.m4a" type="audio/mp4">
-        Dein Browser kann diese Audiodatei leider nicht abspielen.
       </audio>
 
-      <p style="margin-top: 24px;">
+      <p style="margin-top:20px;">
         Ein kleines bisschen Zuhause für deine Ohren. 🤍
       </p>
-
     </div>
   </div>
 
 
   <!-- WOCHE 7 -->
   <div id="week7Page" class="week-page">
-
     <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
 
     <div class="week-page-header">
@@ -798,7 +714,6 @@
     </div>
 
     <div class="content-card">
-
       <div class="icon">😂</div>
 
       <p>
@@ -811,43 +726,17 @@
         dass wir schon immer ein bisschen bescheuert zusammen waren. 😂🤍
       </p>
 
-      <div class="special-box">
-        <p>
-          <strong>
-            Play drücken, kurz lachen
-            und dich daran erinnern,
-            dass zuhause jemand sitzt,
-            der über genau denselben Blödsinn immer noch lachen muss.
-          </strong>
-        </p>
-      </div>
-
-      <video controls playsinline preload="metadata">
+      <video controls playsinline>
         <source src="recorded-50598456974890.mp4" type="video/mp4">
-        Dein Browser kann dieses Video leider nicht abspielen.
       </video>
 
-      <p style="margin-top: 24px;">
-        Ich liebe genau solche Videos von uns.
-      </p>
-
-      <p>
-        Komplett unnötig.<br>
-        Komplett chaotisch.<br>
-        Und genau deshalb so gut.
-      </p>
-
-      <p class="highlight">
-        <strong>Miss you, Bellacita. 🤍</strong>
-      </p>
-
+      <p class="highlight"><strong>Miss you, Bellacita. 🤍</strong></p>
     </div>
   </div>
 
 
   <!-- WOCHE 8 -->
   <div id="week8Page" class="week-page">
-
     <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
 
     <div class="week-page-header">
@@ -857,22 +746,13 @@
     </div>
 
     <div class="content-card">
-
       <div class="icon">🤍</div>
 
-      <p>
-        Bella, heute einfach ein kleiner Reminder,
-        warum du für mich <strong>du</strong> bist.
-      </p>
+      <p>Bella, heute einfach ein kleiner Reminder, warum du für mich du bist.</p>
 
       <div class="special-box">
         <p><strong>Du bist meine Ride or Die.</strong></p>
       </div>
-
-      <p>
-        Mit dir kann man einfach alles machen.
-        Und ich meine wirklich alles.
-      </p>
 
       <p>
         Mit dir kann ich spontan irgendwohin fahren.<br>
@@ -881,74 +761,33 @@
         Stundenlang quatschen.<br>
         Irgendwelchen Blödsinn machen.<br>
         Reisen.<br>
-        Einen komplett unspektakulären Abend verbringen.<br>
-        Oder irgendeine dumme Idee haben –
-        und ziemlich sicher bist du dabei. 😂
+        Einen komplett unspektakulären Abend verbringen.
       </p>
 
       <p class="highlight">
-        <strong>
-          Mit dir braucht es eigentlich gar keinen Plan,
-          damit es gut wird.
-        </strong>
+        <strong>Mit dir braucht es eigentlich gar keinen Plan, damit es gut wird.</strong>
       </p>
 
       <p>
-        Du bist einfach immer dabei.
-        Nicht nur bei den schönen, lustigen Sachen,
-        sondern auch dann, wenn es wirklich darauf ankommt.
-      </p>
-
-      <p>
-        Du bist die Person, die ich anrufen kann.<br>
-        Die zuhört.<br>
-        Die mitfühlt.<br>
-        Die sich mit mir freut.<br>
+        Du bist die Person, die ich anrufen kann.
+        Die zuhört. Die mitfühlt. Die sich mit mir freut.
         Die sich mit mir aufregt. 😂
       </p>
 
-      <p>
-        Und bei der ich weiss:
-        <strong>Wenn etwas ist, bist du da.</strong>
-      </p>
+      <p class="highlight"><strong>I’m always in your corner. 🤍</strong></p>
 
       <p>
-        Und ich hoffe, du weisst,
-        dass es andersrum ganz genauso ist.
+        PS: Falls du auf dieser Reise irgendeine komplett bescheuerte Idee hast,
+        bei der du kurz denkst „Soll ich wirklich?“
       </p>
 
-      <p>
-        Egal ob du gerade am anderen Ende der Welt sitzt
-        oder irgendwann wieder fünf Minuten von mir entfernt bist:
-      </p>
-
-      <p class="highlight">
-        <strong>I’m always in your corner. 🤍</strong>
-      </p>
-
-      <p>
-        <strong>PS:</strong>
-        Falls du auf dieser Reise irgendeine komplett bescheuerte Idee hast,
-        bei der du kurz denkst:
-        „Soll ich wirklich?“
-      </p>
-
-      <p>
-        Stell dir einfach vor,
-        ich stehe neben dir und sage:
-      </p>
-
-      <p class="highlight">
-        <strong>„Ja Bella, mach.“ 😂🤍</strong>
-      </p>
-
+      <p class="highlight"><strong>„Ja Bella, mach.“ 😂🤍</strong></p>
     </div>
   </div>
 
 
   <!-- WOCHE 9 -->
   <div id="week9Page" class="week-page">
-
     <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
 
     <div class="week-page-header">
@@ -958,7 +797,6 @@
     </div>
 
     <div class="content-card">
-
       <div class="icon">📷</div>
 
       <p>Bella, diese Woche will ich kein spektakuläres Foto von dir.</p>
@@ -974,23 +812,12 @@
       </div>
 
       <p>
-        Etwas, das du wahrscheinlich niemals posten würdest.
-      </p>
-
-      <p>
-        Etwas, das heute vielleicht komplett unscheinbar wirkt –
-        aber dich in ein paar Jahren sofort wieder genau an diese Zeit
-        zurückbringen könnte.
-      </p>
-
-      <p>
         Vielleicht dein Frühstück.<br>
         Euer Zimmer.<br>
         Dein Rucksack auf dem Boden.<br>
         Eine Bushaltestelle.<br>
         Deine Schuhe.<br>
-        Irgendeine Strasse.<br>
-        Oder einfach ein Moment, der gerade komplett alltäglich ist.
+        Irgendeine Strasse.
       </p>
 
       <p class="highlight">
@@ -1002,37 +829,15 @@
 
       <p>Und behalt es.</p>
 
-      <p>Du musst es mir diesmal nicht schicken.</p>
-
-      <p>
-        Ich will nur, dass du irgendwann zuhause durch deine Bilder gehst
-        und bei genau diesem einen Foto denkst:
-      </p>
-
       <div class="special-box">
-        <p>
-          <strong>
-            „Ach ja. Genau so hat sich diese Reise auch angefühlt.“ 🤍
-          </strong>
-        </p>
+        <p><strong>„Ach ja. Genau so hat sich diese Reise auch angefühlt.“ 🤍</strong></p>
       </div>
-
-      <p>Die grossen Momente vergisst man selten.</p>
-
-      <p class="highlight">
-        <strong>
-          Aber manchmal sind es genau die kleinen,
-          unspektakulären Dinge, die man später am meisten vermisst.
-        </strong>
-      </p>
-
     </div>
   </div>
 
 
   <!-- WOCHE 10 -->
   <div id="week10Page" class="week-page">
-
     <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
 
     <div class="week-page-header">
@@ -1043,31 +848,20 @@
 
     <div class="content-card">
 
-      <p>
-        Bella, heute gibt’s wieder eine kleine Erinnerung von uns. 🤍
-      </p>
+      <p>Bella, heute gibt’s wieder eine kleine Erinnerung von uns. 🤍</p>
 
-      <p>
-        <strong>Fasnacht in Sissach.</strong>
-      </p>
+      <p><strong>Fasnacht in Sissach.</strong></p>
 
-      <img
-        src="IMG_5373.jpeg"
-        alt="Laura und Rahel an der Fasnacht in Sissach"
-        class="week-photo"
-      >
+      <img src="IMG_5373.jpeg" class="week-photo">
 
       <p>
         Wir zwei als Engel verkleidet – natürlich eine absolut passende
         Kostümwahl für uns. 😇😂
-        <br>
         Wobei … ein kleines bisschen Wahrheit steckt ja vielleicht doch dahinter. 😉
       </p>
 
       <p>
-        Ich weiss gar nicht mehr jedes Detail von diesem Tag,
-        aber ich weiss noch ganz genau,
-        <strong>wie viel Spass ich mit dir hatte.</strong>
+        Ich weiss noch ganz genau, wie viel Spass ich mit dir hatte.
       </p>
 
       <p>
@@ -1076,16 +870,8 @@
         ziemlich gut gehen lassen. 😂
       </p>
 
-      <p>
-        Und wenn ich dieses Foto anschaue,
-        denke ich nicht einmal nur an genau diese Fasnacht zurück.
-      </p>
-
       <p class="highlight">
-        <strong>
-          Ich denke daran, wie sehr ich es liebe,
-          solche Dinge mit dir zu machen.
-        </strong>
+        <strong>Ich denke daran, wie sehr ich es liebe, solche Dinge mit dir zu machen.</strong>
       </p>
 
       <p>
@@ -1093,13 +879,7 @@
         Uns irgendeinen Blödsinn auszudenken.<br>
         Uns zu verkleiden.<br>
         Zu feiern.<br>
-        Ein bisschen zu viel zu trinken. 😂<br>
-        Und irgendwann einfach nur noch über irgendetwas
-        komplett Unnötiges zu lachen.
-      </p>
-
-      <p>
-        Eigentlich ist es völlig egal, was wir machen.
+        Ein bisschen zu viel zu trinken. 😂
       </p>
 
       <div class="special-box">
@@ -1111,59 +891,108 @@
       </div>
 
       <p>
-        Und ich glaube, genau das ist etwas,
-        das ich an uns so liebe.
-      </p>
-
-      <p>
-        Wir brauchen nicht den perfekten Plan,
-        den perfekten Ort oder irgendeinen besonderen Anlass.
-      </p>
-
-      <p>
-        Wenn wir zwei zusammen unterwegs sind,
-        wird daraus sowieso irgendeine Erinnerung,
-        über die wir später wieder lachen können. 🤍
-      </p>
-
-      <p>
-        Und dieses Foto ist für mich genau so eine.
-      </p>
-
-      <p>
         Zwei kleine Engel in Sissach,
-        die selbstverständlich
-        <strong>äusserst vorbildlich und engelsgleich</strong>
+        die selbstverständlich äusserst vorbildlich und engelsgleich
         durch die Fasnacht gegangen sind. 😇😂
       </p>
 
+      <p class="highlight"><strong>„Weisst du noch …?“</strong></p>
+
+      <div class="special-box">
+        <p><strong>Für ein bisschen Blödsinn mit dir bin ich immer zu haben. 😇🤍</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- WOCHE 11 -->
+  <div id="week11Page" class="week-page">
+
+    <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
+
+    <div class="week-page-header">
+      <div class="small">Woche 11</div>
+      <h2>🎲 How well do you know us?</h2>
+      <div class="week-date">9. November 2026</div>
+    </div>
+
+    <div class="content-card">
+
+      <div class="icon">🎲</div>
+
       <p>
-        Ich hoffe, dass noch ganz viele solche Abende auf uns warten.
+        Bella, nach zehn Wochen wird es Zeit für einen kleinen Test. 😂
       </p>
 
       <p>
-        Noch ganz viele Fasnachten.<br>
-        Noch ganz viele Drinks.<br>
-        Noch ganz viele dumme Ideen.<br>
-        Und noch ganz viele Momente,
-        bei denen wir irgendwann sagen:
-      </p>
-
-      <p class="highlight">
-        <strong>„Weisst du noch …?“</strong>
+        Keine Sorge – es geht nicht darum,
+        ob du dich an irgendwelche Jahreszahlen erinnerst.
       </p>
 
       <p>
-        Denn egal wie alt wir werden:
+        Es geht nur darum, ob du dich noch an
+        <strong>unsere Klassiker</strong> erinnerst. 🤍
       </p>
 
       <div class="special-box">
-        <p>
-          <strong>
-            Für ein bisschen Blödsinn mit dir
-            bin ich immer zu haben. 😇🤍
-          </strong>
-        </p>
+        <p><strong>5 Fragen. Mal schauen, ob du bestehst. 😂</strong></p>
+      </div>
+
+
+      <div class="quiz-question" data-correct="b">
+        <h3>1. Wo waren unsere ersten richtigen Ferien alleine?</h3>
+
+        <button class="answer" data-value="a">A) Berlin</button>
+        <button class="answer" data-value="b">B) Barcelona</button>
+        <button class="answer" data-value="c">C) Paris</button>
+      </div>
+
+
+      <div class="quiz-question" data-correct="a">
+        <h3>2. Welches Getränk gehört mittlerweile fast zu uns?</h3>
+
+        <button class="answer" data-value="a">A) Aperol</button>
+        <button class="answer" data-value="b">B) Espresso Martini</button>
+        <button class="answer" data-value="c">C) Hugo</button>
+      </div>
+
+
+      <div class="quiz-question" data-correct="b">
+        <h3>3. Welcher Song erinnert mich sofort an unsere Telefonkabine in Berlin?</h3>
+
+        <button class="answer" data-value="a">A) Freed from Desire</button>
+        <button class="answer" data-value="b">B) L’amour toujours</button>
+        <button class="answer" data-value="c">C) Mr. Brightside</button>
+      </div>
+
+
+      <div class="quiz-question" data-correct="b">
+        <h3>4. Als was waren wir an der Fasnacht in Sissach verkleidet?</h3>
+
+        <button class="answer" data-value="a">A) Teufel</button>
+        <button class="answer" data-value="b">B) Engel</button>
+        <button class="answer" data-value="c">C) Feen</button>
+      </div>
+
+
+      <div class="quiz-question" data-correct="c">
+        <h3>5. Was ist wahrscheinlich die richtige Antwort auf: „Sollen wir diese dumme Idee machen?“</h3>
+
+        <button class="answer" data-value="a">A) Lieber nicht</button>
+        <button class="answer" data-value="b">B) Erst morgen entscheiden</button>
+        <button class="answer" data-value="c">C) Ja Bella, mach 😂</button>
+      </div>
+
+
+      <button class="action-button" onclick="calculateQuiz()">
+        🎲 Ergebnis anzeigen
+      </button>
+
+
+      <div id="quizResult" class="quiz-result">
+        <h3 id="quizScore"></h3>
+        <p id="quizText"></p>
       </div>
 
     </div>
@@ -1174,13 +1003,7 @@
 
 <script>
 
-  /*
-    TESTMODUS:
-    Aktuell sind Woche 1 bis Woche 10 freigeschaltet.
-    Später stellen wir auf die echten Daten um.
-  */
-
-  const TEST_WEEK = 10;
+  const TEST_WEEK = 11;
 
   const weeks = [
     "And so the adventure begins.",
@@ -1193,7 +1016,7 @@
     "Things that are so you",
     "Keep the ordinary",
     "Zwei Engel in Sissach",
-    "Halbzeit",
+    "How well do you know us?",
     "Eine kleine Mission",
     "Ein Brief von mir",
     "Musik für unterwegs",
@@ -1205,6 +1028,7 @@
     "Fast wieder zuhause",
     "Bis ganz bald"
   ];
+
 
   function getCurrentWeek() {
 
@@ -1219,10 +1043,7 @@
       today.getTime() - startDate.getTime();
 
     const days =
-      Math.floor(
-        difference /
-        (1000 * 60 * 60 * 24)
-      );
+      Math.floor(difference / (1000 * 60 * 60 * 24));
 
     if (days < 0) {
       return 0;
@@ -1259,7 +1080,6 @@
         (isUnlocked ? "" : "locked");
 
       div.innerHTML = `
-
         <span class="status">
           ${isUnlocked ? "♡" : "🔒"}
         </span>
@@ -1271,16 +1091,11 @@
         <div class="week-title">
           ${isUnlocked ? title : "Noch nicht"}
         </div>
-
       `;
 
-      if (isUnlocked && weekNumber <= 10) {
-
-        div.onclick =
-          () => showWeek(
-            "week" + weekNumber + "Page"
-          );
-
+      if (isUnlocked && weekNumber <= 11) {
+        div.onclick = () =>
+          showWeek("week" + weekNumber + "Page");
       }
 
       container.appendChild(div);
@@ -1321,6 +1136,121 @@
       .style.display = "block";
 
     window.scrollTo(0, 0);
+  }
+
+
+  /* QUIZ */
+
+  document.addEventListener("click", function(event) {
+
+    if (!event.target.classList.contains("answer")) {
+      return;
+    }
+
+    const question =
+      event.target.closest(".quiz-question");
+
+    question
+      .querySelectorAll(".answer")
+      .forEach(button => {
+        button.classList.remove("selected");
+      });
+
+    event.target.classList.add("selected");
+
+  });
+
+
+  function calculateQuiz() {
+
+    const questions =
+      document.querySelectorAll(".quiz-question");
+
+    let score = 0;
+    let answered = 0;
+
+    questions.forEach(question => {
+
+      const selected =
+        question.querySelector(".answer.selected");
+
+      if (selected) {
+
+        answered++;
+
+        if (
+          selected.dataset.value ===
+          question.dataset.correct
+        ) {
+          score++;
+        }
+
+      }
+
+    });
+
+
+    const result =
+      document.getElementById("quizResult");
+
+    const scoreText =
+      document.getElementById("quizScore");
+
+    const message =
+      document.getElementById("quizText");
+
+
+    result.style.display = "block";
+
+
+    if (answered < questions.length) {
+
+      scoreText.textContent =
+        "Noch nicht ganz 😌";
+
+      message.textContent =
+        "Du musst zuerst alle fünf Fragen beantworten, Bella. 😂";
+
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      return;
+    }
+
+
+    scoreText.textContent =
+      score + " / 5 🤍";
+
+
+    if (score === 5) {
+
+      message.textContent =
+        "Natürlich. Was habe ich auch anderes erwartet. Meine Ride or Die kennt unsere Klassiker. 🤍";
+
+    }
+
+    else if (score === 4) {
+
+      message.textContent =
+        "Akzeptabel, Bella. 😂 Einen kleinen Fehler lasse ich dir durchgehen.";
+
+    }
+
+    else {
+
+      message.textContent =
+        "Ähm Bella … nach deiner Rückkehr brauchen wir dringend einen Aperol und eine kleine Nachhilfestunde. 😂🤍";
+
+    }
+
+
+    result.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
   }
 
 
