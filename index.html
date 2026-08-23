@@ -1,1 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>21 Weeks From Home 🤍</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      background: #f7f3ed;
+      color: #2f302d;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 45px 10px 35px;
+    }
+
+    .hero .emoji {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      font-weight: normal;
+      line-height: 1.1;
+      margin: 0 0 14px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #6c6d68;
+      margin: 0;
+    }
+
+    .intro {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 35px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    }
+
+    .intro p {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: normal;
+      margin: 35px 0 15px;
+    }
+
+    .week {
+      background: white;
+      border-radius: 18px;
+      padding: 19px 20px;
+      margin: 12px 0;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+    }
+
+    .week-number {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 6px;
+    }
+
+    .week-title {
+      font-family: Georgia, serif;
+      font-size: 19px;
+    }
+
+    .locked {
+      opacity: 0.55;
+    }
+
+    .status {
+      float: right;
+      font-size: 18px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 55px;
+      color: #999;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <section class="hero">
+      <div class="emoji">🌏</div>
+
+      <h1>21 Weeks<br>From Home</h1>
+
+      <p>
+        31.08.2026 — 26.01.2027
+      </p>
+    </section>
+
+
+    <section class="intro">
+
+      <p>
+        Für deine Reise habe ich dir etwas Kleines mitgegeben,
+        das keinen Platz in deinem Rucksack braucht.
+        <br><br>
+        21 Wochen lang wartet hier jede Woche eine kleine
+        Überraschung von mir auf dich.
+        <br><br>
+        Manchmal bekommst du etwas von mir.
+        Manchmal musst du etwas machen.
+        Manchmal machen wir etwas gemeinsam.
+        <br><br>
+        Ein kleines Stück Zuhause,
+        während du die Welt entdeckst. 🤍
+      </p>
+
+    </section>
+
+
+    <h2 class="section-title">Deine 21 Wochen</h2>
+
+    <div id="weeks"></div>
+
+
+    <div class="footer">
+
+      Ein kleines Stück Zuhause,
+      egal wo du gerade bist. 🤍
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    const startDate = new Date("2026-08-31T00:00:00");
+
+    const weeks = [
+
+      "Der Anfang",
+      "Eine kleine Aufgabe",
+      "Ein Lied für dich",
+      "Eine Erinnerung",
+      "Ein gemeinsamer Moment",
+      "Eine Nachricht von mir",
+      "Ein Foto von zuhause",
+      "Etwas zum Lachen",
+      "Eine kleine Überraschung",
+      "Eine Erinnerung an uns",
+      "Halbzeit",
+      "Eine kleine Mission",
+      "Ein Brief von mir",
+      "Musik für unterwegs",
+      "Eine Aufgabe für dich",
+      "Ein Stück Zuhause",
+      "Weihnachten",
+      "Ein Blick zurück",
+      "Etwas für die Zukunft",
+      "Fast wieder zuhause",
+      "Bis ganz bald"
+      
+    ];
+
+
+    function getCurrentWeek() {
+
+      const today = new Date();
+
+      const difference =
+        today.getTime() - startDate.getTime();
+
+      const days =
+        Math.floor(difference / (1000 * 60 * 60 * 24));
+
+      if (days < 0) {
+        return 0;
+      }
+
+      return Math.min(
+        Math.floor(days / 7) + 1,
+        21
+      );
+    }
+
+
+    function displayWeeks() {
+
+      const container =
+        document.getElementById("weeks");
+
+      const currentWeek =
+        getCurrentWeek();
+
+
+      weeks.forEach((title, index) => {
+
+        const weekNumber = index + 1;
+
+        const isUnlocked =
+          weekNumber <= currentWeek;
+
+
+        const div =
+          document.createElement("div");
+
+        div.className =
+          "week " +
+          (isUnlocked ? "" : "locked");
+
+
+        div.innerHTML = `
+
+          <span class="status">
+            ${isUnlocked ? "♡" : "🔒"}
+          </span>
+
+          <div class="week-number">
+            Woche ${weekNumber}
+          </div>
+
+          <div class="week-title">
+            ${isUnlocked ? title : "Noch nicht"}
+          </div>
+
+        `;
+
+
+        container.appendChild(div);
+
+      });
+
+    }
+
+
+    displayWeeks();
+
+  </script>
+
+</body>
+</html>
