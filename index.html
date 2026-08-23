@@ -77,6 +77,12 @@
       padding: 19px 20px;
       margin: 12px 0;
       box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .week:hover {
+      transform: translateY(-1px);
     }
 
     .week-number {
@@ -94,6 +100,7 @@
 
     .locked {
       opacity: 0.55;
+      cursor: default;
     }
 
     .status {
@@ -108,6 +115,77 @@
       font-size: 13px;
       line-height: 1.6;
     }
+
+    .week-page {
+      display: none;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 25px;
+      font-size: 15px;
+      color: #6c6d68;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .week-page-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .week-page-header .small {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: #999;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .week-page-header h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+      margin: 0 0 8px;
+    }
+
+    .week-date {
+      color: #8a8a84;
+      font-size: 14px;
+    }
+
+    .week-photo {
+      width: 100%;
+      border-radius: 22px;
+      margin: 10px 0 28px;
+      display: block;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+    }
+
+    .letter {
+      background: white;
+      border-radius: 22px;
+      padding: 26px 24px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    }
+
+    .letter p {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      margin: 0 0 20px;
+    }
+
+    .letter p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      text-align: center;
+      font-size: 20px !important;
+      line-height: 1.5 !important;
+      margin: 28px 0 !important;
+    }
   </style>
 </head>
 
@@ -115,46 +193,213 @@
 
   <div class="container">
 
-    <section class="hero">
-      <div class="emoji">🌏</div>
+    <div id="homePage">
 
-      <h1>21 Weeks<br>From Home</h1>
+      <section class="hero">
+        <div class="emoji">🌏</div>
 
-      <p>
-        31.08.2026 — 26.01.2027
-      </p>
-    </section>
+        <h1>21 Weeks<br>From Home</h1>
+
+        <p>31.08.2026 — 26.01.2027</p>
+      </section>
+
+      <section class="intro">
+        <p>
+          Für deine Reise habe ich dir etwas Kleines mitgegeben,
+          das keinen Platz in deinem Rucksack braucht.
+          <br><br>
+          21 Wochen lang wartet hier jede Woche eine kleine
+          Überraschung von mir auf dich.
+          <br><br>
+          Manchmal bekommst du etwas von mir.
+          Manchmal musst du etwas machen.
+          Manchmal machen wir etwas gemeinsam.
+          <br><br>
+          Ein kleines Stück Zuhause,
+          während du die Welt entdeckst. 🤍
+        </p>
+      </section>
+
+      <h2 class="section-title">Deine 21 Wochen</h2>
+
+      <div id="weeks"></div>
+
+      <div class="footer">
+        Ein kleines Stück Zuhause,<br>
+        egal wo du gerade bist. 🤍
+      </div>
+
+    </div>
 
 
-    <section class="intro">
+    <div id="week1Page" class="week-page">
 
-      <p>
-        Für deine Reise habe ich dir etwas Kleines mitgegeben,
-        das keinen Platz in deinem Rucksack braucht.
-        <br><br>
-        21 Wochen lang wartet hier jede Woche eine kleine
-        Überraschung von mir auf dich.
-        <br><br>
-        Manchmal bekommst du etwas von mir.
-        Manchmal musst du etwas machen.
-        Manchmal machen wir etwas gemeinsam.
-        <br><br>
-        Ein kleines Stück Zuhause,
-        während du die Welt entdeckst. 🤍
-      </p>
+      <div class="back-button" onclick="showHome()">
+        ← Zurück zu den 21 Wochen
+      </div>
 
-    </section>
+      <div class="week-page-header">
+        <div class="small">Woche 01</div>
+        <h2>✈️ And so the adventure begins.</h2>
+        <div class="week-date">31. August 2026</div>
+      </div>
 
+      <img
+        src="IMG_3808.jpeg"
+        alt="Laura und Rahel"
+        class="week-photo"
+      >
 
-    <h2 class="section-title">Deine 21 Wochen</h2>
+      <div class="letter">
 
-    <div id="weeks"></div>
+        <p><strong>Meine Bella 🤍</strong></p>
 
+        <p>
+          Jetzt ist es tatsächlich so weit. Etwas, worüber wir so lange gesprochen haben
+          und das sich irgendwie immer noch weit weg angefühlt hat, ist plötzlich da:
+          Du packst dein Leben für fünf Monate in einen Rucksack und ziehst mit Lugitsch los,
+          um die Welt zu entdecken.
+        </p>
 
-    <div class="footer">
+        <p>
+          Und ich weiss gar nicht so richtig, wie ich in Worte fassen soll, wie sehr ich mich
+          für dich freue und gleichzeitig jetzt schon weiss, wie unglaublich fest du mir fehlen wirst.
+        </p>
 
-      Ein kleines Stück Zuhause,
-      egal wo du gerade bist. 🤍
+        <p>
+          Seit ungefähr zehn Jahren bist du nun schon ein so wichtiger Teil meines Lebens.
+          Wenn ich daran denke, dass wir uns damals einfach im Gym kennengelernt haben und ich
+          zu diesem Zeitpunkt noch keine Ahnung hatte, was für ein wichtiger Mensch du einmal
+          für mich sein würdest, finde ich das irgendwie verrückt.
+        </p>
+
+        <p><strong>Heute bist du aus meinem Leben nicht mehr wegzudenken.</strong></p>
+
+        <p>
+          Ich werde dich vermissen. Dein Lachen. Unseren Blödsinn. Unsere Gespräche.
+          Mit dir über Dinge abzulästern, die uns – oder meistens wahrscheinlich mich 😂 –
+          gerade aufregen. Unsere Aperol-Momente. Und vor allem dieses Gefühl, zu wissen,
+          dass du da bist.
+        </p>
+
+        <p>
+          Aber noch viel mehr als ich dich vermissen werde, freue ich mich darauf,
+          dass <strong>du das hier erleben darfst</strong>.
+        </p>
+
+        <p>
+          Ich wünsche dir, dass du in diesen fünf Monaten ganz viel Neues siehst,
+          Dinge machst, von denen du heute vielleicht noch gar nicht weisst,
+          dass du sie einmal machen wirst, und Erinnerungen sammelst,
+          von denen du mir noch in zehn Jahren erzählen wirst.
+        </p>
+
+        <p>
+          Ich wünsche dir und Luca so viele wunderschöne gemeinsame Momente.
+          Dass ihr zusammen lacht, euch gegenseitig auffangt,
+          euch vielleicht zwischendurch auch mal auf die Nerven geht 😂
+          und diese Reise euch noch einmal auf eine ganz neue Art zusammenschweisst.
+        </p>
+
+        <p>
+          Und vor allem wünsche ich <strong>dir</strong>,
+          dass du diese Zeit auch wirklich für dich nutzt.
+        </p>
+
+        <p>
+          Du bist so oft diejenige, die an alle anderen denkt.
+          Die schaut, dass es allen gut geht. Die da ist. Die sich kümmert.
+        </p>
+
+        <p>
+          Für diese fünf Monate wünsche ich dir,
+          dass du zwischendurch einfach einmal nur an <strong>dich</strong> denkst.
+        </p>
+
+        <p>
+          Dass du abschaltest. Geniesst. Im Moment bist.
+          Nicht darüber nachdenkst, was du solltest oder was zuhause gerade passiert.
+          Sondern irgendwo auf dieser Welt sitzt und einfach denkst:
+        </p>
+
+        <p class="highlight">
+          <strong>Fuck, ist das gerade schön.</strong>
+        </p>
+
+        <p>
+          Und falls es zwischendurch einmal nicht schön ist –
+          falls du Heimweh hast, alles zu viel wird, du einen schlechten Tag hast
+          oder einfach jemanden brauchst – dann möchte ich, dass du eines nie vergisst:
+        </p>
+
+        <p class="highlight">
+          <strong>
+            Ein paar tausend Kilometer ändern absolut nichts daran,
+            dass ich da bin.
+          </strong>
+        </p>
+
+        <p>
+          Du kannst immer auf mich zählen.
+          Egal ob du gerade fünf Minuten oder zwölf Zeitzonen entfernt bist.
+        </p>
+
+        <p>
+          Und genau deshalb gibt es diese kleine Seite.
+        </p>
+
+        <p>
+          Ich kann leider nicht fünf Monate lang in deinem Rucksack mitreisen –
+          und wir wissen beide, dass dafür sowieso kein Platz wäre 😂 –
+          also habe ich mir etwas anderes überlegt.
+        </p>
+
+        <p class="highlight">
+          <strong>21 Wochen. 21 kleine Stücke von mir.</strong>
+        </p>
+
+        <p>
+          Manchmal wird hier etwas auf dich warten,
+          das dich hoffentlich zum Lachen bringt.
+          Manchmal eine Erinnerung an uns.
+          Manchmal etwas, das ich dir sagen möchte.
+          Manchmal bekommst du eine kleine Aufgabe.
+          Und manchmal musst du vielleicht sogar etwas für mich tun.
+        </p>
+
+        <p>
+          Was jeweils kommt, verrate ich dir nicht.
+        </p>
+
+        <p>
+          Nur eines:
+          <strong>Schau nächsten Montag wieder vorbei. 🤍</strong>
+        </p>
+
+        <p>
+          Jetzt aber Handy weg.
+        </p>
+
+        <p>
+          Geh los, Bella. Entdeck die Welt.
+          Mach ganz viele Erinnerungen mit Lugitsch.
+          Lach so viel du kannst.
+          Trink den einen oder anderen Aperol für mich mit.
+          Und geniesse jeden einzelnen verdammten Moment.
+        </p>
+
+        <p>
+          Ich hab dich unglaublich fest lieb.
+        </p>
+
+        <p class="highlight">
+          <strong>
+            Und egal, wo du gerade bist:<br><br>
+            Ein kleines Stück Zuhause reist ab jetzt immer mit dir. 🤍
+          </strong>
+        </p>
+
+      </div>
 
     </div>
 
@@ -166,8 +411,7 @@
     const startDate = new Date("2026-08-31T00:00:00");
 
     const weeks = [
-
-      "Der Anfang",
+      "And so the adventure begins.",
       "Eine kleine Aufgabe",
       "Ein Lied für dich",
       "Eine Erinnerung",
@@ -188,58 +432,39 @@
       "Etwas für die Zukunft",
       "Fast wieder zuhause",
       "Bis ganz bald"
-      
     ];
 
 
     function getCurrentWeek() {
-
       const today = new Date();
-
-      const difference =
-        today.getTime() - startDate.getTime();
-
-      const days =
-        Math.floor(difference / (1000 * 60 * 60 * 24));
+      const difference = today.getTime() - startDate.getTime();
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
       if (days < 0) {
         return 0;
       }
 
-      return Math.min(
-        Math.floor(days / 7) + 1,
-        21
-      );
+      return Math.min(Math.floor(days / 7) + 1, 21);
     }
 
 
     function displayWeeks() {
 
-      const container =
-        document.getElementById("weeks");
-
-      const currentWeek =
-        getCurrentWeek();
-
+      const container = document.getElementById("weeks");
+      const currentWeek = getCurrentWeek();
 
       weeks.forEach((title, index) => {
 
         const weekNumber = index + 1;
+        const isUnlocked = weekNumber <= currentWeek;
 
-        const isUnlocked =
-          weekNumber <= currentWeek;
-
-
-        const div =
-          document.createElement("div");
+        const div = document.createElement("div");
 
         div.className =
           "week " +
           (isUnlocked ? "" : "locked");
 
-
         div.innerHTML = `
-
           <span class="status">
             ${isUnlocked ? "♡" : "🔒"}
           </span>
@@ -251,14 +476,30 @@
           <div class="week-title">
             ${isUnlocked ? title : "Noch nicht"}
           </div>
-
         `;
 
+        if (weekNumber === 1 && isUnlocked) {
+          div.onclick = showWeek1;
+        }
 
         container.appendChild(div);
 
       });
 
+    }
+
+
+    function showWeek1() {
+      document.getElementById("homePage").style.display = "none";
+      document.getElementById("week1Page").style.display = "block";
+      window.scrollTo(0, 0);
+    }
+
+
+    function showHome() {
+      document.getElementById("week1Page").style.display = "none";
+      document.getElementById("homePage").style.display = "block";
+      window.scrollTo(0, 0);
     }
 
 
