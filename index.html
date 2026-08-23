@@ -168,7 +168,8 @@
     .music-card,
     .memory-card,
     .together-card,
-    .audio-card {
+    .audio-card,
+    .video-card {
       background: white;
       border-radius: 22px;
       padding: 26px 24px;
@@ -180,7 +181,8 @@
     .music-card p,
     .memory-card p,
     .together-card p,
-    .audio-card p {
+    .audio-card p,
+    .video-card p {
       font-family: Georgia, serif;
       font-size: 17px;
       line-height: 1.75;
@@ -198,7 +200,8 @@
     .music-icon,
     .memory-icon,
     .together-icon,
-    .audio-icon {
+    .audio-icon,
+    .video-icon {
       text-align: center;
       font-size: 52px;
       margin-bottom: 18px;
@@ -207,7 +210,8 @@
     .mission-main,
     .music-main,
     .together-main,
-    .audio-main {
+    .audio-main,
+    .video-main {
       background: #f7f3ed;
       border-radius: 18px;
       padding: 22px 20px;
@@ -218,7 +222,8 @@
     .mission-main p,
     .music-main p,
     .together-main p,
-    .audio-main p {
+    .audio-main p,
+    .video-main p {
       font-size: 19px;
       line-height: 1.6;
       margin: 0;
@@ -244,6 +249,14 @@
     audio {
       width: 100%;
       margin-top: 18px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 18px;
+      margin-top: 18px;
+      display: block;
+      background: #000;
     }
 
     .tiny-note {
@@ -519,7 +532,6 @@
       <div class="music-icon">🎧</div>
 
       <p>Es gibt Lieder, die einfach sofort eine Person im Kopf auslösen.</p>
-
       <p>Und bei diesem hier bist das ganz klar du.</p>
 
       <p>
@@ -571,7 +583,6 @@
       </p>
 
       <p>Und denk für ein paar Minuten an unsere Telefonkabine in Berlin.</p>
-
       <p>Ich werde wahrscheinlich gerade irgendwo in der Schweiz dasselbe tun. 🤍</p>
 
       <a
@@ -630,10 +641,7 @@
         <strong>Was hatten wir bitte für eine schöne Zeit zusammen. 🥹🤍</strong>
       </p>
 
-      <p>
-        Und irgendwie finde ich dieses Foto gerade jetzt
-        noch ein bisschen spezieller.
-      </p>
+      <p>Und irgendwie finde ich dieses Foto gerade jetzt noch ein bisschen spezieller.</p>
 
       <p>
         Weil ich uns da mit 17 sehe, irgendwo in Barcelona,
@@ -809,12 +817,78 @@
 
   </div>
 
+
+  <!-- WOCHE 7 -->
+  <div id="week7Page" class="week-page">
+
+    <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
+
+    <div class="week-page-header">
+      <div class="small">Woche 07</div>
+      <h2>😂 Proof that we’ve always been ridiculous</h2>
+      <div class="week-date">12. Oktober 2026</div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-icon">😂</div>
+
+      <p>
+        Bella, diese Woche gibt’s keine Aufgabe,
+        keinen grossen Text und auch keine Lebensweisheit.
+      </p>
+
+      <p>
+        Nur diesen kleinen Beweis dafür,
+        dass wir schon immer ein bisschen bescheuert zusammen waren. 😂🤍
+      </p>
+
+      <div class="video-main">
+        <p>
+          <strong>
+            Play drücken, kurz lachen
+            und dich daran erinnern,
+            dass zuhause jemand sitzt,
+            der über genau denselben Blödsinn immer noch lachen muss.
+          </strong>
+        </p>
+      </div>
+
+      <video controls playsinline preload="metadata">
+        <source src="recorded-50598456974890.mp4" type="video/mp4">
+        Dein Browser kann dieses Video leider nicht abspielen.
+      </video>
+
+      <p style="margin-top: 24px;">
+        Ich liebe genau solche Videos von uns.
+      </p>
+
+      <p>
+        Komplett unnötig.<br>
+        Komplett chaotisch.<br>
+        Und genau deshalb so gut.
+      </p>
+
+      <p class="highlight">
+        <strong>
+          Miss you, Bellacita. 🤍
+        </strong>
+      </p>
+    </div>
+
+  </div>
+
 </div>
 
 
 <script>
 
-  const TEST_WEEK = 6;
+  /*
+    TESTMODUS:
+    Woche 1 bis Woche 7 sind momentan freigeschaltet.
+    Ganz am Schluss stellen wir auf die echten Daten um.
+  */
+
+  const TEST_WEEK = 7;
 
   const weeks = [
     "And so the adventure begins.",
@@ -823,7 +897,7 @@
     "Look how far we’ve come.",
     "Aperol with me",
     "A little voice from home",
-    "Ein Foto von zuhause",
+    "Proof that we’ve always been ridiculous",
     "Etwas zum Lachen",
     "Eine kleine Überraschung",
     "Eine Erinnerung an uns",
@@ -930,6 +1004,10 @@
 
         if (weekNumber === 6) {
           div.onclick = () => showWeek("week6Page");
+        }
+
+        if (weekNumber === 7) {
+          div.onclick = () => showWeek("week7Page");
         }
 
       }
