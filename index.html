@@ -169,7 +169,8 @@
     .memory-card,
     .together-card,
     .audio-card,
-    .video-card {
+    .video-card,
+    .ride-card {
       background: white;
       border-radius: 22px;
       padding: 26px 24px;
@@ -182,7 +183,8 @@
     .memory-card p,
     .together-card p,
     .audio-card p,
-    .video-card p {
+    .video-card p,
+    .ride-card p {
       font-family: Georgia, serif;
       font-size: 17px;
       line-height: 1.75;
@@ -201,7 +203,8 @@
     .memory-icon,
     .together-icon,
     .audio-icon,
-    .video-icon {
+    .video-icon,
+    .ride-icon {
       text-align: center;
       font-size: 52px;
       margin-bottom: 18px;
@@ -211,7 +214,8 @@
     .music-main,
     .together-main,
     .audio-main,
-    .video-main {
+    .video-main,
+    .ride-main {
       background: #f7f3ed;
       border-radius: 18px;
       padding: 22px 20px;
@@ -223,7 +227,8 @@
     .music-main p,
     .together-main p,
     .audio-main p,
-    .video-main p {
+    .video-main p,
+    .ride-main p {
       font-size: 19px;
       line-height: 1.6;
       margin: 0;
@@ -258,14 +263,6 @@
       display: block;
       background: #000;
     }
-
-    .tiny-note {
-      text-align: center;
-      color: #999;
-      font-size: 12px;
-      margin-top: 12px;
-      line-height: 1.5;
-    }
   </style>
 </head>
 
@@ -273,6 +270,7 @@
 
 <div class="container">
 
+  <!-- STARTSEITE -->
   <div id="homePage">
 
     <section class="hero">
@@ -323,6 +321,7 @@
     <img src="IMG_3808.jpeg" alt="Laura und Rahel" class="week-photo">
 
     <div class="letter">
+
       <p><strong>Meine Bella 🤍</strong></p>
 
       <p>
@@ -788,13 +787,9 @@
     <div class="audio-card">
       <div class="audio-icon">🎙️</div>
 
-      <p>
-        Bella, diese Woche gibt’s keinen langen Text.
-      </p>
+      <p>Bella, diese Woche gibt’s keinen langen Text.</p>
 
-      <p>
-        Ich wollte einfach, dass du kurz meine Stimme hörst.
-      </p>
+      <p>Ich wollte einfach, dass du kurz meine Stimme hörst.</p>
 
       <div class="audio-main">
         <p>
@@ -869,10 +864,118 @@
       </p>
 
       <p class="highlight">
+        <strong>Miss you, Bellacita. 🤍</strong>
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- WOCHE 8 -->
+  <div id="week8Page" class="week-page">
+
+    <div class="back-button" onclick="showHome()">← Zurück zu den 21 Wochen</div>
+
+    <div class="week-page-header">
+      <div class="small">Woche 08</div>
+      <h2>🤍 Things that are so you</h2>
+      <div class="week-date">19. Oktober 2026</div>
+    </div>
+
+    <div class="ride-card">
+
+      <div class="ride-icon">🤍</div>
+
+      <p>
+        Bella, heute einfach ein kleiner Reminder,
+        warum du für mich <strong>du</strong> bist.
+      </p>
+
+      <div class="ride-main">
+        <p>
+          <strong>
+            Du bist meine Ride or Die.
+          </strong>
+        </p>
+      </div>
+
+      <p>
+        Mit dir kann man einfach alles machen.
+        Und ich meine wirklich alles.
+      </p>
+
+      <p>
+        Mit dir kann ich spontan irgendwohin fahren.<br>
+        Feiern gehen.<br>
+        Einen Aperol trinken.<br>
+        Stundenlang quatschen.<br>
+        Irgendwelchen Blödsinn machen.<br>
+        Reisen.<br>
+        Einen komplett unspektakulären Abend verbringen.<br>
+        Oder irgendeine dumme Idee haben –
+        und ziemlich sicher bist du dabei. 😂
+      </p>
+
+      <p class="highlight">
         <strong>
-          Miss you, Bellacita. 🤍
+          Mit dir braucht es eigentlich gar keinen Plan,
+          damit es gut wird.
         </strong>
       </p>
+
+      <p>
+        Du bist einfach immer dabei.
+        Nicht nur bei den schönen, lustigen Sachen,
+        sondern auch dann, wenn es wirklich darauf ankommt.
+      </p>
+
+      <p>
+        Du bist die Person, die ich anrufen kann.<br>
+        Die zuhört.<br>
+        Die mitfühlt.<br>
+        Die sich mit mir freut.<br>
+        Die sich mit mir aufregt. 😂
+      </p>
+
+      <p>
+        Und bei der ich weiss:
+        <strong>Wenn etwas ist, bist du da.</strong>
+      </p>
+
+      <p>
+        Und ich hoffe, du weisst,
+        dass es andersrum ganz genauso ist.
+      </p>
+
+      <p>
+        Egal ob du gerade am anderen Ende der Welt sitzt
+        oder irgendwann wieder fünf Minuten von mir entfernt bist:
+      </p>
+
+      <p class="highlight">
+        <strong>
+          I’m always in your corner. 🤍
+        </strong>
+      </p>
+
+      <p>
+        <strong>PS:</strong>
+        Falls du auf dieser Reise irgendeine komplett bescheuerte Idee hast,
+        bei der du kurz denkst:
+        „Soll ich wirklich?“
+      </p>
+
+      <p>
+        Stell dir einfach vor,
+        ich stehe neben dir und sage:
+      </p>
+
+      <p class="highlight">
+        <strong>
+          „Ja Bella, mach.“ 😂🤍
+        </strong>
+      </p>
+
     </div>
 
   </div>
@@ -884,11 +987,11 @@
 
   /*
     TESTMODUS:
-    Woche 1 bis Woche 7 sind momentan freigeschaltet.
+    Woche 1 bis Woche 8 sind momentan freigeschaltet.
     Ganz am Schluss stellen wir auf die echten Daten um.
   */
 
-  const TEST_WEEK = 7;
+  const TEST_WEEK = 8;
 
   const weeks = [
     "And so the adventure begins.",
@@ -898,7 +1001,7 @@
     "Aperol with me",
     "A little voice from home",
     "Proof that we’ve always been ridiculous",
-    "Etwas zum Lachen",
+    "Things that are so you",
     "Eine kleine Überraschung",
     "Eine Erinnerung an uns",
     "Halbzeit",
@@ -1008,6 +1111,10 @@
 
         if (weekNumber === 7) {
           div.onclick = () => showWeek("week7Page");
+        }
+
+        if (weekNumber === 8) {
+          div.onclick = () => showWeek("week8Page");
         }
 
       }
